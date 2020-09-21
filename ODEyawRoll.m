@@ -45,22 +45,7 @@ FyT = F_yf + F_yr;
 Mt = l_f*F_yf*cos(u(1)) - l_r*F_yr;
 
 %% coupling between the yaw and roll accelerations
-% vy_dot = (FyT - m * psi_dot * vx + m * h * sin(phi) * psi_dot^2)*...
-%     (I_x + m*h^2)/(m*I_x) + h * (m * h * psi_dot * vx + C_phi * phi + ...
-%     K_phi * phi_dot - (m*h^2 + I_y - I_z) * psi_dot^2 * sin(phi))/I_x;
 
-% psi_ddot = (Mt * + FxT * sin(phi) * h + 2*m*h^2* sin(phi) * phi_dot * psi_dot)/...
-%     (I_z - h^2*phi^2*m);
-% 
-% phi_ddot = (-FyT*h - (C_phi + (I_z - I_y) * psi_dot^2) * phi - K_phi*phi_dot)/I_x;
-
-%%
-% vy_dot = (FyT - m * psi_dot * vx + m * h * phi * psi_dot^2)*...
-%     (I_x + m*h^2)/(m*I_x) + h * (m * h * psi_dot * vx + C_phi * phi + ...
-%     K_phi * phi_dot - (m*h^2 + I_y - I_z) * psi_dot^2 * phi)/I_x;
-
-% psi_ddot = (Mt * + FxT * phi * h + 2*m*h^2* phi * phi_dot * psi_dot)/...
-%     (I_z - h^2*phi^2*m);
 
 vy_dot = (F_yf*cos(delta) + F_yr)/m - vx*psi_dot;
 psi_ddot = (l_f*F_yf*cos(delta) - l_r*F_yr)/I_z;
